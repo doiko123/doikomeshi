@@ -16,10 +16,12 @@ gem 'sass-rails', '>= 6'
 
 gem 'stripe', '5.30.0'
 
+gem 'action_args', '2.5.0'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  
+
   gem 'dotenv-rails', '2.7.6'
 end
 
