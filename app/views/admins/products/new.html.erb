@@ -1,0 +1,11 @@
+<div class="admins-product-new">
+  <header>
+    <h1>商品の登録</h1>
+  </header>
+    <%= form_with url: admins_create_product_path, method: "post" do |f| %>
+      <input type="text" name="name">
+      <input type="submit" value="登録">
+    <% end %>
+  <main>
+  </main>
+</div>
