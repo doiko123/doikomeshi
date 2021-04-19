@@ -25,7 +25,7 @@ class CustomersController < ApplicationController
   def create(customer)
     @customer = Customer.new(customer)
 
-    if @customer.save
+    if @customer.create_with_stripe
       redirect_to @customer, notice: 'Customer was successfully created.'
     else
       render :new
