@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :customers
   scope :admins do
     get '/', to: 'admins/homes#index'
 
