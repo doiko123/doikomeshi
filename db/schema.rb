@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_29_130630) do
+ActiveRecord::Schema.define(version: 2021_04_19_125217) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "customers", comment: "顧客", force: :cascade do |t|
+    t.string "stripe_id", null: false, comment: "StripeのID"
+    t.string "name", null: false, comment: "顧客名"
+    t.string "email", null: false, comment: "メールアドレス"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "products", comment: "商品", force: :cascade do |t|
     t.string "stripe_id", null: false, comment: "StripeのID"
