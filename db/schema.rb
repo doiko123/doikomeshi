@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_19_125217) do
+ActiveRecord::Schema.define(version: 2021_05_05_135701) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,9 @@ ActiveRecord::Schema.define(version: 2021_04_19_125217) do
     t.string "email", null: false, comment: "メールアドレス"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "index_customers_on_email", unique: true
+    t.index ["name"], name: "index_customers_on_name", unique: true
+    t.index ["stripe_id"], name: "index_customers_on_stripe_id", unique: true
   end
 
   create_table "products", comment: "商品", force: :cascade do |t|
@@ -28,6 +31,8 @@ ActiveRecord::Schema.define(version: 2021_04_19_125217) do
     t.string "name", null: false, comment: "商品名"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["name"], name: "index_products_on_name", unique: true
+    t.index ["stripe_id"], name: "index_products_on_stripe_id", unique: true
   end
 
 end
