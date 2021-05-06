@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :customers
   scope :admins do
     get '/', to: 'admins/homes#index'
 
@@ -8,5 +7,9 @@ Rails.application.routes.draw do
       post '/', to: 'admins/products#create', as: :admins_create_product
       get '/new', to: 'admins/products#new', as: :admins_new_product
     end
+  end
+
+  namespace :admins do
+    resources :customers
   end
 end
