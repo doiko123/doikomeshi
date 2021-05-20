@@ -9,6 +9,9 @@ Rails.application.routes.draw do
     end
   end
 
+    get '/', to: 'pages#index'
+    post '/sponsored', to: 'pages#sponsored'
+
   namespace :admins do
     resources :customers
   end
