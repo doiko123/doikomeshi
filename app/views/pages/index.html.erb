@@ -1,0 +1,33 @@
+<div>
+  <header>
+    <h1>カード登録画面</h1>
+  </header>
+  <main>
+    <%= form_with url: '/sponsored', method: 'post', local: true do |form| %>
+      <h2>下記ご入力の上、お布施して下さい</h2>
+      <hr>
+      <label for="name">お名前</label>
+      <input id="name" type="text" name="name" required>
+      <label for="email">メールアドレス</label>
+      <input id="email" type="email" name="email" required>
+      <div>
+        <div>
+          <label for="cardnumber">カード番号</label>
+          <input id="cardnumber" type="text" inputmode="numeric" name="billing_card[number]" placeholder="例）0123456701234567" required>
+        </div>
+        <div>
+          <label for="expirationdate">有効期限 (mm/yy)</label>
+          <input id="expirationdate" type="text" pattern="^(0[1-9]|1[0-2])\/[0-9]{2}$" inputmode="numeric" name="billing_card[expiration]" placeholder="例）06/32" required>
+        </div>
+        <div>
+          <label for="securitycode">セキュリティコード</label>
+          <input id="securitycode" minlength="3" maxlength="4" type="text" pattern="[0-9]*" inputmode="numeric" name="billing_card[cvc]" placeholder="例）012" required>
+        </div>
+      <p>月が一桁の場合は頭に0を入力</p>
+      </div>
+      <div>
+        <%= button_tag "カードを登録してお布施", data: { disable_with: "どいこにお金を送っています・・・" } %>
+      </div>
+    <% end %>
+  </main>
+</div>
