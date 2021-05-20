@@ -3,7 +3,7 @@ class PagesController < ApplicationController
 
   end
 
-  def sponsored(billing_card:, email:)
+  def sponsored(name:, email:, billing_card:)
 
   end
 end
