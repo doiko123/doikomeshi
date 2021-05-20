@@ -1,5 +1,8 @@
 class Customer < ApplicationRecord
-  validates :stripe_id, presence: true, unless: Proc.new { |customer| customer.new_record? }
+
+  has_many: cards
+
+  validates :stripe_id, presence: true
   validates :name, presence: true
   validates :email, presence: true
 
