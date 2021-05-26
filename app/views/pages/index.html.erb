@@ -16,8 +16,12 @@
           <input id="cardnumber" type="text" inputmode="numeric" name="billing_card[number]" placeholder="例）0123456701234567" required>
         </div>
         <div>
-          <label for="expirationdate">有効期限 (mm/yy)</label>
-          <input id="expirationdate" type="text" pattern="^(0[1-9]|1[0-2])\/[0-9]{2}$" inputmode="numeric" name="billing_card[expiration]" placeholder="例）06/32" required>
+          <label for="expirationdate">有効期限 (mm)</label>
+          <input id="expirationdate" type="text" pattern="^(0[1-9]|1[0-2])$" inputmode="numeric" name="billing_card[exp_month]" placeholder="例）06/32" required>
+        </div>
+        <div>
+          <label for="expirationdate">有効期限 (yy)</label>
+          <input id="expirationdate" type="text" pattern="^([0-9]{2}$)" inputmode="numeric" name="billing_card[exp_year]" placeholder="例）06/32" required>
         </div>
         <div>
           <label for="securitycode">セキュリティコード</label>
