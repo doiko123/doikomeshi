@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
     get '/', to: 'pages#index'
     post '/sponsored', to: 'pages#sponsored'
+    get '/thanks', to: 'pages#thanks'
 
   namespace :admins do
     resources :customers
