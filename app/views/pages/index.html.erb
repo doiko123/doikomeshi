@@ -1,10 +1,10 @@
 <div>
   <header>
-    <h1>カード登録画面</h1>
+    <h1>どいこメシ</h1>
   </header>
   <main>
     <%= form_with url: '/sponsored', method: 'post', local: true do |form| %>
-      <h2>下記ご入力の上、お布施して下さい</h2>
+      <h2>ご入力の上、下のボタンをポチッと押してください</h2>
       <hr>
       <label for="name">お名前</label>
       <input id="name" type="text" name="name" required>
@@ -26,7 +26,7 @@
       <p>月が一桁の場合は頭に0を入力</p>
       </div>
       <div>
-        <%= button_tag "カードを登録してお布施", data: { disable_with: "どいこにお金を送っています・・・" } %>
+        <%= button_tag "どいこにうまいメシを食べさせる", data: { disable_with: "どいこにごはん代を送っています・・・" } %>
       </div>
     <% end %>
   </main>
