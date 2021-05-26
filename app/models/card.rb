@@ -31,13 +31,15 @@ class Card < ApplicationRecord
       {source: stripe_card.id},
     )
 
-    # DBにカードをインサートする
-    Card.create!(
+    # インスタンスに属性を追加し、DBにカードをインサートする
+    self.attributes = {
       stripe_id: card.id,
       last4: card.last4,
       exp_month: card.exp_month,
       exp_year: card.exp_year,
       brand: card.brand,
-    )
+    }
+
+    self.save!
   end
 end
