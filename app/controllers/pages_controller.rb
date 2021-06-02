@@ -19,6 +19,10 @@ class PagesController < ApplicationController
           number: card_params[:number], # "5105 1051 0510 5100" or "5105105105105100"
           cvc: card_params[:cvc] # "123"
         )
+
+      # TODO: productのid=5とskuのid=1を削除して、残りの各1つをいずれもid=1に変えたい
+      sku = Sku.find(2)
+      order = Order.new(sku: sku, customer: customer).create_with_stripe!
     end
 
     # 処理が正常に完了した場合
