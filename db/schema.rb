@@ -49,9 +49,15 @@ ActiveRecord::Schema.define(version: 2021_06_02_124958) do
   end
 
   create_table "skus", comment: "SKU", force: :cascade do |t|
+    t.string "stripe_id", null: false, comment: "StripeのID"
+    t.bigint "product_id", null: false, comment: "商品ID"
     t.integer "price", null: false, comment: "価格"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["product_id"], name: "index_skus_on_product_id"
+    t.index ["stripe_id"], name: "index_skus_on_stripe_id", unique: true
   end
 
+  add_foreign_key "cards", "customers"
+  add_foreign_key "skus", "products"
 end
