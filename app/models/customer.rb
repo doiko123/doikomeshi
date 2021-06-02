@@ -1,6 +1,7 @@
 class Customer < ApplicationRecord
 
   has_many :cards
+  has_many :orders
 
   validates :stripe_id, presence: true
   validates :name, presence: true

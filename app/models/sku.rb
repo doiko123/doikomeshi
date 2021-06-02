@@ -1,6 +1,7 @@
 class Sku < ApplicationRecord
 
 belongs_to :product
+has_many :orders
 
   def create_with_stripe!
     stripe_sku = Stripe::SKU.create({
