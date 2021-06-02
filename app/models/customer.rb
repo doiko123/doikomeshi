@@ -1,6 +1,7 @@
 class Customer < ApplicationRecord
 
   has_many :cards
+  has_many :orders
 
   validates :stripe_id, presence: true
   validates :name, presence: true
@@ -13,5 +14,6 @@ class Customer < ApplicationRecord
 
     # CustomerをDBにインサートする
     self.save!
+    self
   end
 end

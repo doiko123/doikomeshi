@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_20_134718) do
+ActiveRecord::Schema.define(version: 2021_06_02_135839) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,17 @@ ActiveRecord::Schema.define(version: 2021_05_20_134718) do
     t.index ["stripe_id"], name: "index_customers_on_stripe_id", unique: true
   end
 
+  create_table "orders", comment: "注文", force: :cascade do |t|
+    t.bigint "customer_id", null: false, comment: "顧客ID"
+    t.bigint "sku_id", null: false, comment: "SKUID"
+    t.string "stripe_id", null: false, comment: "StripeのID"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["customer_id"], name: "index_orders_on_customer_id"
+    t.index ["sku_id"], name: "index_orders_on_sku_id"
+    t.index ["stripe_id"], name: "index_orders_on_stripe_id", unique: true
+  end
+
   create_table "products", comment: "商品", force: :cascade do |t|
     t.string "stripe_id", null: false, comment: "StripeのID"
     t.string "name", null: false, comment: "商品名"
@@ -48,4 +59,18 @@ ActiveRecord::Schema.define(version: 2021_05_20_134718) do
     t.index ["stripe_id"], name: "index_products_on_stripe_id", unique: true
   end
 
+  create_table "skus", comment: "SKU", force: :cascade do |t|
+    t.string "stripe_id", null: false, comment: "StripeのID"
+    t.bigint "product_id", null: false, comment: "商品ID"
+    t.integer "price", null: false, comment: "価格"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["product_id"], name: "index_skus_on_product_id"
+    t.index ["stripe_id"], name: "index_skus_on_stripe_id", unique: true
+  end
+
+  add_foreign_key "cards", "customers"
+  add_foreign_key "orders", "customers"
+  add_foreign_key "orders", "skus"
+  add_foreign_key "skus", "products"
 end

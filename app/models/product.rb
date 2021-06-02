@@ -1,11 +1,13 @@
 class Product < ApplicationRecord
-  before_create :create_stripe_product
 
+  has_one :sku
 
-  private
-
-  def create_stripe_product
-    stripe_product = Stripe::Product.create({name: name})
+  # Stripeの商品を作成し、DBにインサートする
+  def create_with_stripe!
+    stripe_product = Stripe::Product.create({name: name, type: 'good', shippable: 'false'})
     self.stripe_id = stripe_product.id
+
+    self.save!
+    self
   end
 end

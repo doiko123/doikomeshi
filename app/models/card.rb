@@ -41,5 +41,6 @@ class Card < ApplicationRecord
     }
 
     self.save!
+    self
   end
 end
