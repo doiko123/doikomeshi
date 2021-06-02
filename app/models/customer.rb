@@ -13,5 +13,6 @@ class Customer < ApplicationRecord
 
     # CustomerをDBにインサートする
     self.save!
+    self
   end
 end
