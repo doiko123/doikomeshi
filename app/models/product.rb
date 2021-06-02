@@ -4,7 +4,7 @@ class Product < ApplicationRecord
 
   # Stripeの商品を作成し、DBにインサートする
   def create_with_stripe!
-    stripe_product = Stripe::Product.create({name: name, type: 'good'})
+    stripe_product = Stripe::Product.create({name: name, type: 'good', shippable: 'false'})
     self.stripe_id = stripe_product.id
 
     self.save!
