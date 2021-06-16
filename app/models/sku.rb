@@ -7,7 +7,7 @@ has_many :orders
     stripe_sku = Stripe::SKU.create({
       price: price,
       currency: 'jpy',
-      inventory: {type: 'infinite'},
+      inventory: { type: 'infinite' },
       product: product.stripe_id
     })
 
