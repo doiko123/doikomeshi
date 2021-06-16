@@ -10,6 +10,11 @@ belongs_to :sku
       customer: customer.stripe_id
     })
 
+    Stripe::Order.pay(
+      stripe_order.id,
+      { customer: customer.stripe_id },
+    )
+
     self.stripe_id = stripe_order.id
 
     self.save!
