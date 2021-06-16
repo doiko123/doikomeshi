@@ -6,7 +6,7 @@ belongs_to :sku
   def create_with_stripe!
     stripe_order = Stripe::Order.create({
       currency: 'jpy',
-      items: [{type: 'sku', parent: sku.stripe_id}],
+      items: [{ type: 'sku', parent: sku.stripe_id }],
       customer: customer.stripe_id
     })
 
