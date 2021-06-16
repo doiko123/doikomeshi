@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     end
   end
 
-    get '/', to: 'pages#index'
+    get '/', to: 'pages#index', as: :top_page
     post '/sponsored', to: 'pages#sponsored'
     get '/thanks', to: 'pages#thanks'
 

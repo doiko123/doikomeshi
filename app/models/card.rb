@@ -28,7 +28,7 @@ class Card < ApplicationRecord
     # Stripeから持ってきたトークンでデータを作る
     card = Stripe::Customer.create_source(
       self.customer.stripe_id,
-      {source: stripe_card.id},
+      { source: stripe_card.id },
     )
 
     # インスタンスに属性を追加し、DBにカードをインサートする

@@ -21,7 +21,7 @@ class PagesController < ApplicationController
         )
 
       # TODO: productのid=5とskuのid=1を削除して、残りの各1つをいずれもid=1に変えたい
-      sku = Sku.find(2)
+      sku = Sku.first
       order = Order.new(sku: sku, customer: customer).create_with_stripe!
     end
 
