@@ -1,0 +1,90 @@
+.thanks-page {
+  padding: 24px 0 0;
+  height: 100vh;
+  .header {
+    .page-title {
+      margin: 16px 0 0;
+      text-align: center;
+    }
+    .top-icon {
+      display: block;
+      width: 80px;
+      margin: 16px auto;
+    }
+  }
+  main {
+    width: 90%;
+    max-width: 580px;
+    min-width: 320px;
+    background-color: #f6ebf7;
+    margin: 0 auto 40px;
+    box-sizing: border-box;
+    padding: 24px 16px 40px;
+    border-radius: 24px;
+    .container {
+      font-weight: normal;
+      .message {
+        font-size: 18px;
+        text-align: center;
+      }
+      .comment {
+        text-align: center;
+      }
+      .dividing-line {
+        border: solid 2px #f2d7f5;
+        width: 80%;
+        margin-bottom: 24px;
+      }
+      .link-button {
+        display: block;
+        cursor: pointer;
+        text-decoration: none;
+        width: 40%;
+        text-align: center;
+        line-height: 40px;
+        height: 40px;
+        margin: 40px auto 0;
+        padding: 4px 24px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #f7f7f7;
+        border: none;
+        border-radius: 32px;
+        background-color: #f2abfa;
+        &:hover {
+          opacity: .7;
+        }
+      }
+    }
+  }
+  .footer {
+    text-align: center;
+    padding-bottom: 64px;
+    .line-first {
+      margin: 0;
+      border: 3px solid #f2d7f5;
+    }
+    .line-second {
+      margin: 4px 0 0;
+      border: 3px solid #f2d7f5;
+    }
+    .footer-icon-area {
+      margin-top: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      .icon1 {
+        display: block;
+        height: 40px;
+      }
+      .icon2 {
+        display: block;
+        width: 60px;
+      }
+    }
+    .copyright {
+      display: block;
+      margin-bottom: 12px;
+    }
+  }
+}
