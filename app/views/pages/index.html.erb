@@ -30,7 +30,11 @@
         <label for="security-code" class="form-label">セキュリティコード</label>
         <input id="security-code" minlength="3" maxlength="4" type="text" pattern="[0-9]*" inputmode="numeric" name="billing_card[cvc]" class="input-box code" placeholder="012" required>
       <% end %>
-      <%= button_tag "どいこにうまいメシを食べさせるため1000円あげる", class: "submit-button", form: "form", data: { disable_with: "どいこにメシ代を送っています・・・" } %>
+      <div class="agree-check-area">
+        <input type="checkbox" id="agree-check" class="agree-check">
+        <label for="agree-check" class="form-label agree"><a href="">利用規約</a>に同意する</label>
+      </div>
+      <%= button_tag "どいこにうまいメシを食べさせるため1000円あげる", id: "submit-button", class: "submit-button disable", form: "form", data: { disable_with: "どいこにメシ代を送っています・・・" } %>
     </section>
   </main>
   <footer class="footer">
