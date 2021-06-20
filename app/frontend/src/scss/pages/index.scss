@@ -6,7 +6,7 @@
       margin: 16px 0 0;
       text-align: center;
     }
-    .top-icon3 {
+    .top-icon {
       display: block;
       width: 80px;
       margin: 16px auto;
@@ -32,7 +32,7 @@
         width: 80%;
       }
       .form {
-        padding: 24px 0 32px;
+        padding: 24px 0 16px;
         width: 280px;
         margin: 0 auto;
         .form-label {
@@ -112,11 +112,11 @@
       display: flex;
       justify-content: center;
       align-items: flex-end;
-      .top-icon1 {
+      .icon1 {
         display: block;
         height: 40px;
       }
-      .top-icon2 {
+      .icon2 {
         display: block;
         width: 60px;
       }
