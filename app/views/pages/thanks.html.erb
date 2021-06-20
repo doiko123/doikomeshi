@@ -1,11 +1,28 @@
-<div>
-  <header>
-    <h1>どいこメシ</h1>
+<%= javascript_pack_tag 'pages/thanks' %>
+<div class="thanks-page">
+  <header class="header">
+    <h1 class="page-title">どいこメシ</h1>
+    <%= image_pack_tag 'food_rurohan_kakuni.png', class: "top-icon" %>
   </header>
   <main>
-    <h2>どいこからのお礼<h2>
-    <p>ありがとうございました！</p>
-    <p>頂いたお金でおいしいご飯食べてきます(=^^=)</p>
-    <%= link_to 'TOPへ', top_page_path %>
+    <section class="container">
+      <h2 class="message">どいこからのお礼</h2>
+      <hr class="dividing-line">
+      <p class="comment">ありがとうございました！</p>
+      <p class="comment">頂いたお金でおいしいご飯食べてきます(=^^=)</p>
+      <p class="comment">一週間以内にお礼のメールを送らせて頂きますね！！</p>
+      <%= link_to 'TOPへ戻る', top_page_path, class: "link-button" %>
+    </section>
   </main>
+  <footer class="footer">
+    <hr class="line-first">
+    <hr class="line-second">
+    <div class="footer-icon-area">
+      <%= image_pack_tag 'computer_laptop_angle5.png', class: "icon1" %>
+      <%= image_pack_tag 'animal_chara_gorilla_girl.png', class: "icon2" %>
+    </div>
+    <small class="copyright">© Doiko all rights reserved.</small>
+    <hr class="line-first">
+    <hr class="line-second">
+  </footer>
 </div>
