@@ -15,16 +15,16 @@
         <label for="email" class="form-label">メールアドレス</label>
         <input id="email" type="email" name="email" class="input-box" placeholder="doi-doiko@sample.com" required>
         <label for="card-number" class="form-label">カード番号</label>
-        <input id="card-number" type="text" inputmode="numeric" name="billing_card[number]" class="input-box" placeholder="1111222233334444" required>
+        <input id="card-number" type="text" inputmode="numeric" minlength="14" maxlength="16" name="billing_card[number]" class="input-box" autocomplete="cc-number" placeholder="1111222233334444" required>
         <p class>
         <div class="expiration-area">
           <label for="expiration-month" class="form-label">有効期限（月</label>
           <label for="expiration-year" class="form-label">／年）</label>
         </div>
         <div class="expiration-area">
-          <input id="expiration-month" type="text" pattern="^(0[1-9]|1[0-2])$" inputmode="numeric" name="billing_card[exp_month]" class="input-box expiration" placeholder="06" required>
+          <input id="expiration-month" type="text" pattern="^(0[1-9]|1[0-2])$" minlength="2" maxlength="2" inputmode="numeric" name="billing_card[exp_month]" class="input-box expiration" autocomplete="cc-exp-month" placeholder="06" required>
           <div class="slash">／</div>
-          <input id="expiration-year" type="text" pattern="^([0-9]{2}$)" inputmode="numeric" name="billing_card[exp_year]" class="input-box expiration" placeholder="23" required>
+          <input id="expiration-year" type="text" pattern="^([0-9]{2}$)" minlength="2" maxlength="2" inputmode="numeric" name="billing_card[exp_year]" class="input-box expiration" autocomplete="cc-exp-year" placeholder="23" required>
         </div>
         <p class="comment">※ 月が一桁の場合は頭に0を入力</p>
         <label for="security-code" class="form-label">セキュリティコード</label>
