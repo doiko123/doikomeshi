@@ -1,38 +1,51 @@
 <%= javascript_pack_tag 'pages/index' %>
-<div>
-  <header>
-    <h1>どいこメシ</h1>
+<div class="top-page">
+  <header class="header">
+    <h1 class="page-title">どいこメシ</h1>
+    <%= image_pack_tag 'food_rurohan_kakuni.png', class: "top-icon" %>
+    <p class="return">リターン：決済後一週間以内にどいこからお礼のメールが届きます</p>
   </header>
   <main>
-    <%= form_with url: '/sponsored', method: 'post', local: true do |form| %>
-      <h2>ご入力の上、下のボタンをポチッと押してください</h2>
-      <hr>
-      <label for="name">お名前</label>
-      <input id="name" type="text" name="name" required>
-      <label for="email">メールアドレス</label>
-      <input id="email" type="email" name="email" required>
-      <div>
-        <div>
-          <label for="cardnumber">カード番号</label>
-          <input id="cardnumber" type="text" inputmode="numeric" name="billing_card[number]" placeholder="例）0123456701234567" required>
+    <section class="container">
+      <h2 class="message">ご入力の上、下のボタンをポチッと押してください</h2>
+      <hr class="dividing-line">
+      <%= form_with url: '/sponsored', method: 'post', id: 'form', class: 'form', local: true do |form| %>
+        <label for="name" class="form-label">お名前（ＨＮ可）</label>
+        <input id="name" type="text" name="name" class="input-box" placeholder="どい どいこ" required>
+        <label for="email" class="form-label">メールアドレス</label>
+        <input id="email" type="email" name="email" class="input-box" placeholder="doi-doiko@sample.com" required>
+        <label for="card-number" class="form-label">カード番号</label>
+        <input id="card-number" type="text" inputmode="numeric" minlength="14" maxlength="16" name="billing_card[number]" class="input-box" autocomplete="cc-number" placeholder="1111222233334444" required>
+        <p class>
+        <div class="expiration-area">
+          <label for="expiration-month" class="form-label">有効期限（月</label>
+          <label for="expiration-year" class="form-label">／年）</label>
         </div>
-        <div>
-          <label for="expirationdate">有効期限 (mm)</label>
-          <input id="expirationdate" type="text" pattern="^(0[1-9]|1[0-2])$" inputmode="numeric" name="billing_card[exp_month]" placeholder="例）06/32" required>
+        <div class="expiration-area">
+          <input id="expiration-month" type="text" pattern="^(0[1-9]|1[0-2])$" minlength="2" maxlength="2" inputmode="numeric" name="billing_card[exp_month]" class="input-box expiration" autocomplete="cc-exp-month" placeholder="06" required>
+          <div class="slash">／</div>
+          <input id="expiration-year" type="text" pattern="^([0-9]{2}$)" minlength="2" maxlength="2" inputmode="numeric" name="billing_card[exp_year]" class="input-box expiration" autocomplete="cc-exp-year" placeholder="23" required>
         </div>
-        <div>
-          <label for="expirationdate">有効期限 (yy)</label>
-          <input id="expirationdate" type="text" pattern="^([0-9]{2}$)" inputmode="numeric" name="billing_card[exp_year]" placeholder="例）06/32" required>
-        </div>
-        <div>
-          <label for="securitycode">セキュリティコード</label>
-          <input id="securitycode" minlength="3" maxlength="4" type="text" pattern="[0-9]*" inputmode="numeric" name="billing_card[cvc]" placeholder="例）012" required>
-        </div>
-      <p>月が一桁の場合は頭に0を入力</p>
+        <p class="comment">※ 月が一桁の場合は頭に0を入力</p>
+        <label for="security-code" class="form-label">セキュリティコード</label>
+        <input id="security-code" minlength="3" maxlength="4" type="text" pattern="[0-9]*" inputmode="numeric" name="billing_card[cvc]" class="input-box code" placeholder="012" required>
+      <% end %>
+      <div class="agree-check-area">
+        <input type="checkbox" id="agree-check" class="agree-check">
+        <label for="agree-check" class="form-label agree"><a href="">利用規約</a>に同意する</label>
       </div>
-      <div>
-        <%= button_tag "どいこにうまいメシを食べさせる", data: { disable_with: "どいこにごはん代を送っています・・・" } %>
-      </div>
-    <% end %>
+      <%= button_tag "どいこにうまいメシを食べさせるため1000円あげる", id: "submit-button", class: "submit-button disable", form: "form", data: { disable_with: "どいこにメシ代を送っています・・・" } %>
+    </section>
   </main>
+  <footer class="footer">
+    <hr class="line-first">
+    <hr class="line-second">
+    <div class="footer-icon-area">
+      <%= image_pack_tag 'computer_laptop_angle5.png', class: "icon1" %>
+      <%= image_pack_tag 'animal_chara_gorilla_girl.png', class: "icon2" %>
+    </div>
+    <small class="copyright">© Doiko all rights reserved.</small>
+    <hr class="line-first">
+    <hr class="line-second">
+  </footer>
 </div>
