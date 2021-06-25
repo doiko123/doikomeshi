@@ -22,6 +22,8 @@ gem 'webpacker', '~> 4.x'
 # Sprockets4.0だと、app/assetsディレクトリを削除するとSprockets::Railtie::ManifestNeededErrorが発生するため
 gem 'sprockets', '~> 3.7.2'
 
+gem 'slack-notifier'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
