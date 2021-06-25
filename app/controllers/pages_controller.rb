@@ -22,7 +22,17 @@ class PagesController < ApplicationController
       order = Order.new(sku: sku, customer: customer).create_with_stripe!
     end
 
-    # 処理が正常に完了した場合
+    # slack通知する内容
+    msg = [
+      "お名前： #{name}",
+      "メールアドレス： #{email}",
+      "メッセージ： #{message}"
+    ]
+
+    # slackへ通知を送信
+    SlackNotification.new.send(msg.join("\n"))
+
+    # 処理が正常に完了したらthanksページへ遷移
     redirect_to action: :thanks
   end
 

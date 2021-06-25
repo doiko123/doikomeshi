@@ -2,7 +2,7 @@ class SlackNotification
 
   WEBHOOK_URL = ENV['SLACK_WEBHOOK_URL']
 
-  def send(message)
-    Slack::Notifier.new(WEBHOOK_URL).ping(message)
+  def send(msg)
+    Slack::Notifier.new(WEBHOOK_URL).ping(msg)
   end
 end
