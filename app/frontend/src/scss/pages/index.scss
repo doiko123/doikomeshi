@@ -74,7 +74,7 @@
       }
       .agree-check-area {
         text-align: center;
-        margin-bottom: 8px;
+        margin-bottom: 12px;
       }
       .submit-button {
         display: block;
@@ -122,6 +122,12 @@
       .icon2 {
         display: block;
         width: 60px;
+      }
+    }
+    .terms {
+      .link-text {
+        font-size: 12px;
+        padding: 0 8px 0 4px;
       }
     }
     .copyright {
