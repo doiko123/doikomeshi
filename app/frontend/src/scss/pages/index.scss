@@ -46,6 +46,7 @@
           display: block;
           border: none;
           border-radius: 6px;
+          outline: none;
           padding: 8px 12px;
           margin-bottom: 12px;
           width: 240px;
@@ -57,6 +58,15 @@
             width: 24px;
             margin-bottom: 0;
           }
+        }
+        .text-area {
+          border: none;
+          border-radius: 6px;
+          outline: none;
+          padding: 8px 12px;
+          margin-bottom: 12px;
+          width: 240px;
+          height: 80px;
         }
         .expiration-area {
           display: flex;

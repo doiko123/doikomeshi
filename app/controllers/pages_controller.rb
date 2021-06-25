@@ -1,9 +1,8 @@
 class PagesController < ApplicationController
   def index; end
 
-  def sponsored(name:, email:, billing_card:)
+  def sponsored(name:, email:, message:, billing_card:)
     ActiveRecord::Base.transaction do
-
       # stripe上とDB上両方でcustomerを作成
       customer = Customer.new(name: name, email: email).create_with_stripe!
 
