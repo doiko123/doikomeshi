@@ -11,8 +11,14 @@
       width: 80px;
       margin: 16px auto;
     }
-    .return {
+    .about-return {
+      width: 85%;
+      margin: 0 auto 24px;
       text-align: center;
+      .title {
+        font-size: 18px;
+        background: linear-gradient(transparent 40%, #f2d7f5 0%);
+      }
     }
   }
   main {
