@@ -44,6 +44,11 @@
       </div>
       <%= button_tag "どいこにうまいメシを食べさせるため支援する（1000円）", id: "submit-button", class: "submit-button disable", form: "form", data: { disable_with: "どいこにメシ代を送っています・・・" } %>
     </section>
+    <% flash.each do |message_type, message| %>
+      <div class="flash-area">
+        <%= message %>
+      </div>
+    <% end %>
   </main>
   <footer class="footer">
     <hr class="line-first">
