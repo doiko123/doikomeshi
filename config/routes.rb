@@ -16,4 +16,6 @@ Rails.application.routes.draw do
   namespace :admins do
     resources :customers
   end
+
+  get '*unmatched_route', to: 'application#raise_not_found'
 end
