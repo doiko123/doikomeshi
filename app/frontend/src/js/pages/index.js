@@ -4,7 +4,6 @@ $(document).on("change", ".top-page #agree-check", function () {
   const submitButton = $(".top-page #submit-button");
 
   if ($(this).prop("checked")) {
-    console.log("あああ");
     submitButton.removeClass("disable");
     submitButton.prop("disabled", false);
   } else {
