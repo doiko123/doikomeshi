@@ -82,9 +82,21 @@
         width: 60px;
       }
     }
+    .terms {
+      .link-text {
+        font-size: 12px;
+        padding: 0 8px;
+        color: #333;
+      }
+    }
     .copyright {
       display: block;
       margin-bottom: 12px;
+    }
+    .sns-icon {
+      display: block;
+      margin: 8px auto;
+      width: 30px;
     }
   }
 }
