@@ -39,6 +39,15 @@ class PagesController < ApplicationController
     Rails.logger.error e
     Rails.logger.error e.class
     Rails.logger.error e.backtrace.join("\n")
+    # slack通知する内容
+    msg = [
+      "エラー内容： #{e}",
+      "氏名： #{name}",
+      "メールアドレス： #{email}",
+      "メッセージ： #{message}"
+    ]
+    # slackへ通知を送信
+    SlackNotification.new.send_error(msg.join("\n"))
     flash[:alert] = '【入力内容をご確認ください】カードについてエラーとなりました。入力内容がお間違いないかご確認頂き、再度エラーになる場合は別のカードでお試し下さい。'
     redirect_to action: :index
   rescue Stripe::InvalidRequestError => e
@@ -46,6 +55,15 @@ class PagesController < ApplicationController
     Rails.logger.error e
     Rails.logger.error e.class
     Rails.logger.error e.backtrace.join("\n")
+    # slack通知する内容
+    msg = [
+      "エラー内容： #{e}",
+      "氏名： #{name}",
+      "メールアドレス： #{email}",
+      "メッセージ： #{message}"
+    ]
+    # slackへ通知を送信
+    SlackNotification.new.send_error(msg.join("\n"))
     flash[:alert] = '【入力内容をご確認ください】入力内容についてエラーとなりました。入力内容がお間違いないかご確認の上、修正・お進み願います。'
     redirect_to action: :index
   rescue Stripe::StripeError => e
@@ -53,12 +71,30 @@ class PagesController < ApplicationController
     Rails.logger.error e
     Rails.logger.error e.class
     Rails.logger.error e.backtrace.join("\n")
+    # slack通知する内容
+    msg = [
+      "エラー内容： #{e}",
+      "氏名： #{name}",
+      "メールアドレス： #{email}",
+      "メッセージ： #{message}"
+    ]
+    # slackへ通知を送信
+    SlackNotification.new.send_error(msg.join("\n"))
     flash[:alert] = '【時間を空けてお試しください】現在決済システムにて問題が発生しておりカードをご登録いただけません。恐れ入りますが時間をあけて再度お試しください。'
     redirect_to action: :index
   rescue StandardError => e
-    # otomoni側のエラー
+    # どいこメシ側のエラー
     Rails.logger.error e
     Rails.logger.error e.backtrace.join("\n")
+    # slack通知する内容
+    msg = [
+      "エラー内容： #{e}",
+      "氏名： #{name}",
+      "メールアドレス： #{email}",
+      "メッセージ： #{message}"
+    ]
+    # slackへ通知を送信
+    SlackNotification.new.send_error(msg.join("\n"))
     flash[:alert] = '【時間を空けてお試しください】システムで問題が発生しておりカードをご登録いただけません。恐れ入りますが時間をあけて再度お試しください。'
     redirect_to action: :index
   end
