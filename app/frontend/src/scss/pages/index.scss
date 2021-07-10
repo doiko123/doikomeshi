@@ -30,7 +30,7 @@
     max-width: 580px;
     min-width: 320px;
     background-color: #f6ebf7;
-    margin: 0 auto 40px;
+    margin: 0 auto 24px;
     box-sizing: border-box;
     padding: 24px 16px 40px;
     border-radius: 24px;
@@ -142,6 +142,13 @@
         opacity: 0;
       }
     }
+  }
+  .announce {
+    display: block;
+    max-width: 720px;
+    width: 90%;
+    font-size: 12px;
+    margin: 0 auto 64px;
   }
   .footer {
     text-align: center;
