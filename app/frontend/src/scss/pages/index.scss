@@ -11,13 +11,17 @@
       width: 80px;
       margin: 16px auto;
     }
-    .about-return {
+    .description {
       width: 85%;
       margin: 0 auto 24px;
       text-align: center;
       .title {
         font-size: 18px;
-        background: linear-gradient(transparent 40%, #f2d7f5 0%);
+        background: linear-gradient(transparent 40%, #f5f3d7 0%);
+      }
+      .emoji {
+        font-family: "Segoe UI Emoji", "Segoe UI Symbol", "Apple Color Emoji",
+          "Noto Color Emoji", "Noto Emoji", sans-serif;
       }
     }
   }
@@ -26,7 +30,7 @@
     max-width: 580px;
     min-width: 320px;
     background-color: #f6ebf7;
-    margin: 0 auto 40px;
+    margin: 0 auto 24px;
     box-sizing: border-box;
     padding: 24px 16px 40px;
     border-radius: 24px;
@@ -138,6 +142,13 @@
         opacity: 0;
       }
     }
+  }
+  .announce {
+    display: block;
+    max-width: 720px;
+    width: 90%;
+    font-size: 12px;
+    margin: 0 auto 64px;
   }
   .footer {
     text-align: center;
