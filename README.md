@@ -1,24 +1,23 @@
-# README
+# どいこメシ
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+メスゴリラ並のつよつよエンジニアを目指す「どいこ」を支援して、うまいメシを食べさせてあげる事で<br>
+「どいこ」からの心温まるお礼メールを受け取れるサービスです。<br>
 
-Things you may want to cover:
+https://doikomeshi.com/
 
-* Ruby version
+（ちょっと何言ってるか不明かと思いますが、心優しい方お待ちしております😊）
 
-* System dependencies
+## 制作にあたっての目的
 
-* Configuration
+- 0->1でプロダクトを完成させる
+（サービス内容・サイト・DBの設計〜実装〜デザイン〜デプロイなど全て）
+- Stripeの決済サービスを使って自サイト内で決済を行える仕組みを実装する
 
-* Database creation
+## 使用した技術スタックなど
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Ruby on Rails（フロント・バック）
+- Webpacker（JavaScript・scss・画像）
+- Stripe API（決済サービス）
+- KIYAKU（規約周りの生成）
+- Heroku（クラウドプラットフォーム）
+- Postgresql（データベース）
