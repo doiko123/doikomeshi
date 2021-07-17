@@ -15,16 +15,23 @@
       width: 85%;
       margin: 0 auto 40px;
       text-align: center;
+      &.blog-link {
+        width: 100%;
+        box-sizing: border-box;
+        background-color: #ededed;
+        padding: 24px 0;
+        margin: 0 auto 40px;
+        .link-comment {
+          margin: 0 0 8px;
+        }
+      }
       .title {
         font-size: 18px;
         background: linear-gradient(transparent 40%, #f5f3d7 0%);
       }
       .emoji {
         font-family: "Segoe UI Emoji", "Segoe UI Symbol", "Apple Color Emoji",
-        "Noto Color Emoji", "Noto Emoji", sans-serif;
-      }
-      .link-comment {
-        margin-bottom: 8px;
+          "Noto Color Emoji", "Noto Emoji", sans-serif;
       }
     }
   }
